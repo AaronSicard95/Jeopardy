@@ -20,15 +20,30 @@
 
 let categories = [];
 
-
+class myGame{
+    constructor(){
+        this.categories = categories;
+    }
+}
 /** Get NUM_CATEGORIES random category from API.
  *
  * Returns array of category ids
  */
 
 async function getCategoryIds() {
-    let cats = axios.get(`jservice.io/api/categories?count=20&offset=${Math.random(800)}`)
-    return cats.data.data;
+    let cats = await axios.get(`https://jservice.io/api/categories?count=20&offset=${Math.floor(Math.random()*800)}`)
+    let iter = [];
+    for(let i = 0; i <6;i++){
+        let newNum = Math.floor(Math.random()*20);
+        while(iter.includes(newNum)){
+            newNum = Math.floor(Math.random()*20);
+        }
+        iter[i]=newNum;
+    }
+    for(let i = 0; i < 6;i++ ){
+    categories.push([{id: cats.data[iter[i]].id, cat: cats.data[iter[i]].title}])
+    }
+    return categories;
 }
 
 /** Return object with data about a category:
