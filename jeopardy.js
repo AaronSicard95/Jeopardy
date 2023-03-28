@@ -19,10 +19,25 @@
 //  ]
 
 let categories = [];
+const gameTable = $("#gameTable")
 
+class clue{
+    constructor(clue,answer){
+        this.clue = clue;
+        this.answer = answer;
+    }
+}
 class myGame{
     constructor(){
         this.categories = categories;
+    }
+    createTable(){
+        for(cats of categories){
+            for(let i = 1;i<6;i++){
+                let newDiv = document.createElement("div");
+                newDiv.innerHTML = "yolo";
+            }
+        }
     }
 }
 /** Get NUM_CATEGORIES random category from API.
