@@ -5,3 +5,20 @@
   #8d2ab5
   #74119c
 */
+tr{
+  min-width: 1000px;
+}
+.tableEl{
+  min-width: 200px;
+  max-width: 200px;
+  min-height: 150px;
+  max-height: 150px;
+  background-color: darkblue;
+}
+.buttonImg{
+  
+  min-width: 200px;
+  max-width: 200px;
+  min-height: 150px;
+  max-height: 150px;
+}
